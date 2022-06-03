@@ -134,3 +134,20 @@ STATICFILES_DIRS = (
 )
 
 PATH_VAR = "http://0.0.0.0:8000/acompaniantes"
+
+LOGIN_URL = "/login/auth0" 
+LOGIN_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "https://isis2503-maria-gon.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Fip_publica_instancia:8000" 
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-maria-gon.us.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'JnLgCCI9sr1CUlJpqX3tL3eXbSGKYf5d' 
+SOCIAL_AUTH_AUTH0_SECRET = 'QCFK2mhwh_X5y8omrCW7v5jSyGRCSp8BaiAAMVvgZqeEimG5JozLSoUpYE2mHFKL' 
+SOCIAL_AUTH_AUTH0_SCOPE = [ 
+    'openid', 
+    'profile',
+    'email',
+    'role', ] 
+AUTHENTICATION_BACKENDS = { 
+    'monitoring.auth0backend.Auth0', 
+    'django.contrib.auth.backends.ModelBackend',
+}
