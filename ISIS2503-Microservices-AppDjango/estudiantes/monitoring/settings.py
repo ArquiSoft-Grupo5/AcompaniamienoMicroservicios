@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'acompaniantes_db',
-        'USER': 'acompaniantes_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '0.0.0.0',
-        'PORT': '5432',
+        'NAME': "nombredbg5",
+        'USER': "usuariog5",
+        'PASSWORD': "passwordg5",
+        'HOST': "nombredbg5.cgjc5m0uiufa.us-east-1.rds.amazonaws.com",
+        'PORT': "5432",
     }
 }
 
