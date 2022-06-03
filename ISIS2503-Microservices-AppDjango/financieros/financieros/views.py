@@ -18,7 +18,7 @@ def check_estudiante(data):
 
 def FinancieroList(request):
     queryset = Financiero.objects.all()
-    context = list(queryset.values('id', 'estudiante', 'value', 'unit', 'place', 'dateTime'))
+    context = list(queryset.values('id', 'estudiante', 'credits', 'valor', 'place', 'dateTime'))
     return JsonResponse(context, safe=False)
 
 def FinancieroCreate(request):
@@ -28,8 +28,8 @@ def FinancieroCreate(request):
         if check_estudiante(data_json) == True:
             financiero = Financiero()
             financiero.estudiante = data_json['estudiante']
-            financiero.value = data_json['value']
-            financiero.unit = data_json['unit']
+            financiero.value = data_json['credits']
+            financiero.unit = data_json['valor']
             financiero.place = data_json['place']
             financiero.save()
             return HttpResponse("successfully created financiero")
